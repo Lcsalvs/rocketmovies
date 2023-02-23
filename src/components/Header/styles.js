@@ -1,56 +1,64 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.header`
-  grid-area: header;
-  height: 105px;
-  width: 100%;
+  .header {
+    width: min(100%, 1120px);
+    height: 116px;
+    margin: 0 auto;
+    /* padding: 0 64px; */
 
-  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
-
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
-  
-  display: flex;
-  justify-content: space-between;
-  padding: 42px 123px;
-`
-
-export const Profile = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 64px;
-
-  > h1 { 
-    color: ${({ theme}) => theme.COLORS.PINK};
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 32px;
-  }
-
-  > div {
     display: flex;
-    flex-direction: column;
-    line-height: 18px;
+    align-items: center;
+    justify-content: space-between;
 
-    span {
-      font-size: 14px;
-      color: ${({ theme}) => theme.COLORS.GRAY_100};
+    background: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+
+    > h1 a {
+      color: ${({ theme }) => theme.COLORS.PINK};
+      margin-right: 64px;
     }
 
-    strong {
-      span {
-      font-size: 14px;
-      color: ${({ theme}) => theme.COLORS.WHITE};
-    }
+    > .profile {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      align-content: center;
+
+      > div {
+        display: grid;
+        text-align: right;
+        margin-right: 15px;
+        width: 115px;
+
+        a:first-child {
+          color: ${({ theme }) => theme.COLORS.WHITE};
+          font-weight: 700;
+        }
+
+        a {
+          color: ${({ theme }) => theme.COLORS.GRAY_100};
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 18px;
+        }
+
+      }
+
+      img {
+        width: 64px;
+        height: 64px;
+        padding: 4px;
+        border: 1px solid #3e3b47;
+        border-radius: 50%;
+      }
+
+      img:hover {
+        transition: 0.5s;
+        transform: scale(1.1);
+      }
     }
   }
-
-  > img {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-  }
+  border-bottom: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_700};
 `
+

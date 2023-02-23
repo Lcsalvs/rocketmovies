@@ -3,20 +3,18 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
-  display: grid;
-  grid-template-rows: 105px auto;
-  grid-template-areas: 
-  "header"
-  "content";
+  
 
   > main {
-    grid-area: content;
-    overflow-y: scroll;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-around;
+    overflow-y: auto;
   }
 `
 
 export const Content = styled.div`
-  grid-area: content;
   padding: 0 64px;
   overflow-y: auto;
 
@@ -26,7 +24,6 @@ export const Content = styled.div`
 `
 
 export const NewMovies = styled.div`
-  grid-area: newmovie;
   background-color: ${({ theme}) => theme.COLORS.PINK};
   color: ${({ theme}) => theme.COLORS.BACKGROUND_900};
 

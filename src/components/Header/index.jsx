@@ -1,22 +1,33 @@
-import { Container, Profile } from './styles'
+import { Container } from './styles'
 import { Input } from '../Input'
+import { Link } from 'react-router-dom'
 
 export function Header() {
   return (
     <Container>
-      <Profile>
-        <h1>RocketMovies</h1>
+
+      <div className="header">
+        <h1>
+          <Link to="/">
+            RocketMovies
+          </Link>
+        </h1>
 
         <Input placeholder="Pesquisar pelo título"/>
 
-        <div>
-          <strong><span>Lucas Alves</span></strong>
-          <span>sair</span>
-        </div>
-        
-          <img src="https://github.com/lcsalvs.png" alt="Foto de usuario" />
+        <div className='profile'>
+            <div>
+              <Link to="/profile">Lucas Alves</Link>
+              <a href="#">sair</a>
+            </div>
 
-      </Profile>
+            <Link to="/profile">
+              <img src="https://github.com/lcsalvs.png" alt="Imagem do usuario" />
+            </Link>
+        </div>
+      </div>
+     
+
     </Container>
   )
 }

@@ -14,7 +14,3 @@ export default {
     RED: '#FF002E'
   }
 }
-
-
-
-// #48373a
