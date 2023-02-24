@@ -1,9 +1,8 @@
-import { FiPlus } from 'react-icons/fi'
 
-import { Container, Content, NewMovies } from "./styles"
+import { Container } from "./styles"
 import { Header } from "../../components/Header"
-import { Section } from "../../components/Section"
 import { Movie } from "../../components/Movie"
+import { Button } from "../../components/Button"
 
 import { Link } from 'react-router-dom'
 
@@ -13,32 +12,18 @@ export function Home() {
       <Header />
 
       <main>
-        <NewMovies>
-            <FiPlus />
-            Adicionar filme
-        </NewMovies>
-
-        <Content>
+        <section className="content">
+          <h1>Meus Filmes</h1>
+          <Link to="/new">
+            <Button title="+ Adicionar filme"/>
+          </Link>
+        </section>
           
-          <Section title="Meus filmes">
-            <Movie data = {
-              {
-                title: 'Interestellar',
-                description: 'Lalalala',
-                tags: [
-                  {id: "1", name: 'Ficção Científica'},
-                  {id: "2", name: 'Drama'},
-                  {id: "3", name: 'Família'}
-                ]
-              }
-            }
-            />
-          </Section>
-
-          
-
-        </Content>
-
+          <section className="movies">
+            <Movie title="Interestellar"/>
+            <Movie title="Interestellar"/>
+            <Movie title="Interestellar"/>
+          </section>
       </main>
 
     </Container>

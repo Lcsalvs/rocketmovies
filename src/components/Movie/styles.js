@@ -1,23 +1,29 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export const Container = styled.div`
+export const Container = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 32px;
+  gap: 15px;
   width: 100%;
-  background-color: ${({ theme}) => theme.COLORS.BACKGROUND_600};
-  border: none;
-  border-radius: 10px;
-  padding: 22px;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_600};
 
-  > h1 {
-    flex: 1;
-    text-align: left;
-    font-weight: 700;
+  > h2 {
     color: ${({ theme }) => theme.COLORS.WHITE};
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
   }
 
-  > footer {
-    width: 100%;
+  > p {
+    color: ${({ theme}) => theme.COLORS.GRAY_100};
+  }
+
+  > div {
     display: flex;
-    margin-top: 24px;
+    gap: 8px;
   }
 `
