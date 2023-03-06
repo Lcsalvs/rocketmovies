@@ -2,8 +2,14 @@ import styled from "styled-components";
 
 export const Container = styled.button`
   width: 100%;
-  background-color: ${({ theme }) => theme.COLORS.PINK};
-  color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+
+  background-color: ${({ theme, isActive }) =>
+    isActive ? theme.COLORS.PINK : '#0D0C0F'};
+    
+  color: ${({ theme, isActive }) =>
+    isActive ? theme.COLORS.BACKGROUND_900 : theme.COLORS.PINK};
+
+  
   height: 56px;
   border: 0;
   padding: 0 16px;
@@ -11,7 +17,4 @@ export const Container = styled.button`
   border-radius: 10px;
   font-weight: 500;
   
-  &:disabled {
-    opacity: .5;
-  }
 `
